@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-midnight text-text-light font-lato antialiased;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-site px-5 md:px-8 lg:px-10;
+  }
+
+  .section-eyebrow {
+    @apply font-cinzel text-[11px] font-semibold uppercase tracking-eyebrow text-gold md:text-xs;
+  }
+
+  .section-eyebrow-lines {
+    @apply flex items-center gap-4;
+  }
+
+  .section-eyebrow-lines::before,
+  .section-eyebrow-lines::after {
+    content: "";
+    @apply h-px flex-1 bg-gold/30;
+  }
+
+  .section-title {
+    @apply font-cinzel text-[2rem] font-semibold leading-tight tracking-wide text-text-light md:text-[2.35rem] lg:text-[2.6rem];
+  }
+
+  .section-title-dark {
+    @apply font-cinzel text-[2rem] font-semibold leading-tight tracking-wide text-forest-deep md:text-[2.35rem] lg:text-[2.6rem];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-7 py-3.5 font-cinzel text-[11px] font-semibold uppercase tracking-nav text-forest-deep transition hover:bg-gold-light md:px-8 md:text-xs;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-gold bg-transparent px-7 py-3.5 font-cinzel text-[11px] font-semibold uppercase tracking-nav text-gold transition hover:bg-gold/10 md:px-8 md:text-xs;
+  }
+
+  .btn-outline-nav {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-gold/70 bg-transparent px-5 py-2.5 font-cinzel text-[10px] font-semibold uppercase tracking-nav text-gold transition hover:border-gold hover:bg-gold/5 md:text-[11px];
+  }
+}
