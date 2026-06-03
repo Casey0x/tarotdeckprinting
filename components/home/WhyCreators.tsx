@@ -1,4 +1,7 @@
-import Image from "next/image";
+import { ProductPhotoFrame } from "@/components/ui/ProductPhotoFrame";
+
+const WHY_IMAGE =
+  "https://images.unsplash.com/photo-1617024426306-6582a7757926?auto=format&fit=crop&w=1200&q=85";
 
 const features = [
   {
@@ -41,16 +44,13 @@ export function WhyCreators() {
     <section id="why-creators" className="bg-forest-deep py-16 md:py-20 lg:py-24">
       <div className="site-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-          <div className="relative aspect-[4/5] w-full max-w-lg overflow-hidden rounded-sm border border-white/10 shadow-2xl lg:max-w-none">
-            <Image
-              src="https://images.unsplash.com/photo-1617024426306-6582a7757926?auto=format&fit=crop&w=1200&q=80"
-              alt="Custom printed tarot tuck box with gold foil detailing"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          </div>
+          <ProductPhotoFrame
+            src={WHY_IMAGE}
+            alt="Custom printed tarot tuck box with gold foil detailing"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            objectPosition="center 35%"
+            className="aspect-[4/5] w-full max-w-lg lg:max-w-none"
+          />
 
           <div>
             <div className="section-eyebrow-lines mb-5 max-w-xs">

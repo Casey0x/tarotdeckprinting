@@ -52,7 +52,7 @@ export function TrustBar() {
   return (
     <section
       id="trust-bar"
-      className="border-y border-gold/25 bg-[rgba(0,0,0,0.45)] backdrop-blur-sm"
+      className="border-y border-gold/25 bg-[rgba(0,0,0,0.55)]"
     >
       <div className="site-container">
         <ul className="grid grid-cols-1 divide-y divide-gold/10 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-5 lg:divide-x lg:divide-gold/10">

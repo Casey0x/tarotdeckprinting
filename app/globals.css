@@ -50,4 +50,8 @@
   .btn-outline-nav {
     @apply inline-flex items-center justify-center gap-2 rounded-sm border border-gold/70 bg-transparent px-5 py-2.5 font-cinzel text-[10px] font-semibold uppercase tracking-nav text-gold transition hover:border-gold hover:bg-gold/5 md:text-[11px];
   }
+
+  .product-photo-frame {
+    @apply relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_24px_70px_rgba(0,0,0,0.55)];
+  }
 }
