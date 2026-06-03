@@ -1,31 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 const decks = [
   {
     title: "Mystic Arcana",
-    image: "https://images.unsplash.com/photo-1615373884710-aaae09f83f83?auto=format&fit=crop&w=600&q=80",
-    tone: "from-purple-900/30",
+    image: PRODUCT_IMAGES.cardsSpread,
+    objectPosition: "center 50%",
   },
   {
     title: "Celestial Night",
-    image: "https://images.unsplash.com/photo-1617024426306-6582a7757926?auto=format&fit=crop&w=600&q=80",
-    tone: "from-black/40",
+    image: PRODUCT_IMAGES.cardsStack,
+    objectPosition: "center 40%",
   },
   {
     title: "Wildwood",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-    tone: "from-green-900/30",
+    image: PRODUCT_IMAGES.cardsAlt,
+    objectPosition: "center 45%",
   },
   {
     title: "Solar Path",
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80",
-    tone: "from-amber-900/20",
+    image: PRODUCT_IMAGES.cardsSpread,
+    objectPosition: "center 30%",
   },
   {
     title: "Monochrome Oracle",
-    image: "https://images.unsplash.com/photo-1528715471570-976553768d98?auto=format&fit=crop&w=600&q=80",
-    tone: "from-gray-900/30",
+    image: PRODUCT_IMAGES.cardsStack,
+    objectPosition: "center 55%",
   },
 ];
 
@@ -37,6 +38,9 @@ export function RecentDecks() {
           <div>
             <p className="section-eyebrow mb-3">Portfolio</p>
             <h2 className="section-title">Recent Decks</h2>
+            <p className="mt-2 max-w-md font-lato text-sm text-text-light/55">
+              Full colour CMYK printing on 300gsm premium card stock with custom printed tuck boxes.
+            </p>
           </div>
           <Link
             href="#gallery"
@@ -54,12 +58,13 @@ export function RecentDecks() {
             >
               <Image
                 src={deck.image}
-                alt={`${deck.title} tarot deck box`}
+                alt={`${deck.title} — full colour printed tarot deck`}
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-cover saturate-[0.92] transition duration-500 group-hover:scale-105"
+                style={{ objectPosition: deck.objectPosition }}
                 sizes="(max-width: 768px) 50vw, 20vw"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t ${deck.tone} to-transparent opacity-80`} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 p-3">
                 <span className="font-cinzel text-[10px] uppercase tracking-wide text-text-light/80">
                   {deck.title}

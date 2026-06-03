@@ -1,11 +1,9 @@
 import { ProductPhotoFrame } from "@/components/ui/ProductPhotoFrame";
-
-const TUCK_BOX_IMAGE =
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 const features = [
   "Full colour printing",
-  "Premium finish",
+  "300gsm premium card stock",
   "Supplied assembled",
   "Designed to fit your deck",
 ];
@@ -15,20 +13,19 @@ export function TuckBoxes() {
     <section id="tuck-boxes" className="bg-midnight py-16 md:py-20 lg:py-24">
       <div className="site-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-          {/* Image left */}
           <ProductPhotoFrame
-            src={TUCK_BOX_IMAGE}
-            alt="Custom printed tarot tuck box on dark velvet"
+            src={PRODUCT_IMAGES.cardsStack}
+            alt="Custom printed tarot tuck box with full colour CMYK artwork"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            objectPosition="center 40%"
+            objectPosition="center 45%"
             className="aspect-[5/6] w-full lg:aspect-[4/5]"
           />
 
-          {/* Content right */}
           <div>
             <h2 className="section-title">Custom Printed Tuck Boxes</h2>
             <p className="mt-5 max-w-lg font-lato text-sm leading-relaxed text-text-light/72 md:text-[15px] md:leading-7">
               Every tarot deck includes a custom printed tuck box designed using your artwork.
+              Full colour CMYK printing on sturdy board — the same professional process as your cards.
             </p>
 
             <ul className="mt-8 space-y-4">

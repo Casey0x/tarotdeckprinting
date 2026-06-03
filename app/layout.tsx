@@ -25,11 +25,11 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "TarotDeckPrinting.com — Premium Tarot Deck Printing",
   description:
-    "Custom tarot deck printing on 300gsm premium card stock with custom printed tuck boxes. MOQ 50 decks. Free digital proofs. Worldwide shipping.",
+    "Custom tarot deck printing — full colour CMYK on 300gsm premium card stock with custom printed tuck boxes. MOQ 50 decks. Free digital proofs. Worldwide shipping.",
   openGraph: {
     title: "TarotDeckPrinting.com — Bring Your Tarot Deck To Life",
     description:
-      "Premium tarot deck printing with custom printed tuck boxes. 300gsm premium card stock. Minimum 50 decks.",
+      "Full colour CMYK tarot deck printing on 300gsm premium card stock with custom printed tuck boxes. Minimum 50 decks.",
     type: "website",
     url: "https://tarotdeckprinting.com",
   },

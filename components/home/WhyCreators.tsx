@@ -1,7 +1,5 @@
 import { ProductPhotoFrame } from "@/components/ui/ProductPhotoFrame";
-
-const WHY_IMAGE =
-  "https://images.unsplash.com/photo-1617024426306-6582a7757926?auto=format&fit=crop&w=1200&q=85";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 const features = [
   {
@@ -45,10 +43,10 @@ export function WhyCreators() {
       <div className="site-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <ProductPhotoFrame
-            src={WHY_IMAGE}
-            alt="Custom printed tarot tuck box with gold foil detailing"
+            src={PRODUCT_IMAGES.cardsSpread}
+            alt="Full colour CMYK printed tarot deck and custom tuck box"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            objectPosition="center 35%"
+            objectPosition="center 40%"
             className="aspect-[4/5] w-full max-w-lg lg:max-w-none"
           />
 
