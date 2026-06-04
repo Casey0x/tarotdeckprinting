@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[70vh] max-h-[820px] items-center overflow-hidden bg-[linear-gradient(135deg,#0a1628_0%,#0B2516_45%,#060e08_100%)] pt-[72px] lg:min-h-[72vh] lg:max-h-none lg:pt-[80px]"
+      className="relative flex min-h-[70vh] max-h-[820px] items-center overflow-hidden bg-[linear-gradient(135deg,#0a1628_0%,#0B2516_45%,#060e08_100%)] pt-[76px] lg:min-h-[72vh] lg:max-h-none lg:pt-[88px]"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_15%_40%,rgba(212,175,55,0.05),transparent_60%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_85%_50%,rgba(106,158,114,0.06),transparent_55%)]" />

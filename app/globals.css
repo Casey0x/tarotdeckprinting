@@ -10,6 +10,10 @@
   body {
     @apply bg-midnight text-text-light font-lato antialiased;
   }
+
+  body.nav-open {
+    @apply overflow-hidden;
+  }
 }
 
 @layer components {
