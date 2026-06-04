@@ -33,7 +33,7 @@ export function ProductPhotoFrame({
         alt={alt}
         fill
         priority={priority}
-        className="object-cover saturate-[0.92]"
+        className="object-cover"
         style={{ objectPosition }}
         sizes={sizes}
       />

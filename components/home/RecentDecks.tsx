@@ -1,34 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
-
-const decks = [
-  {
-    title: "Mystic Arcana",
-    image: PRODUCT_IMAGES.cardsSpread,
-    objectPosition: "center 50%",
-  },
-  {
-    title: "Celestial Night",
-    image: PRODUCT_IMAGES.cardsStack,
-    objectPosition: "center 40%",
-  },
-  {
-    title: "Wildwood",
-    image: PRODUCT_IMAGES.cardsAlt,
-    objectPosition: "center 45%",
-  },
-  {
-    title: "Solar Path",
-    image: PRODUCT_IMAGES.cardsSpread,
-    objectPosition: "center 30%",
-  },
-  {
-    title: "Monochrome Oracle",
-    image: PRODUCT_IMAGES.cardsStack,
-    objectPosition: "center 55%",
-  },
-];
+import { IMAGES } from "@/lib/images";
 
 export function RecentDecks() {
   return (
@@ -51,17 +23,16 @@ export function RecentDecks() {
         </div>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 lg:gap-5">
-          {decks.map((deck) => (
+          {IMAGES.gallery.map((deck) => (
             <figure
-              key={deck.title}
+              key={deck.src}
               className="group relative aspect-[3/4] overflow-hidden rounded-sm border border-white/10 bg-midnight"
             >
               <Image
-                src={deck.image}
-                alt={`${deck.title} — full colour printed tarot deck`}
+                src={deck.src}
+                alt={deck.alt}
                 fill
-                className="object-cover saturate-[0.92] transition duration-500 group-hover:scale-105"
-                style={{ objectPosition: deck.objectPosition }}
+                className="object-cover transition duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 50vw, 20vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />

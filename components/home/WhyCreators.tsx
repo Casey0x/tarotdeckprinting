@@ -1,5 +1,5 @@
 import { ProductPhotoFrame } from "@/components/ui/ProductPhotoFrame";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
+import { IMAGES } from "@/lib/images";
 
 const features = [
   {
@@ -43,10 +43,10 @@ export function WhyCreators() {
       <div className="site-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <ProductPhotoFrame
-            src={PRODUCT_IMAGES.cardsSpread}
-            alt="Full colour CMYK printed tarot deck and custom tuck box"
+            src={IMAGES.quality}
+            alt="Full colour CMYK printed tarot deck and custom printed tuck box"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            objectPosition="center 40%"
+            objectPosition="center center"
             className="aspect-[4/5] w-full max-w-lg lg:max-w-none"
           />
 

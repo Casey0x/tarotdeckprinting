@@ -1,10 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CelestialEye } from "@/components/ui/BrandIcons";
+import { IMAGES } from "@/lib/images";
 
 export function FinalCta() {
   return (
     <section id="quote" className="relative overflow-hidden bg-forest-deep py-20 md:py-24 lg:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(212,175,55,0.06),transparent_65%)]" />
+      <div className="absolute inset-0">
+        <Image
+          src={IMAGES.ctaBanner}
+          alt=""
+          fill
+          className="object-cover object-center opacity-25"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,37,22,0.92)_0%,rgba(11,37,22,0.88)_50%,rgba(6,14,8,0.95)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(212,175,55,0.08),transparent_65%)]" />
+      </div>
 
       <div className="site-container relative z-10 text-center">
         <h2 className="font-cinzel-deco text-[2rem] font-normal leading-tight text-text-light sm:text-4xl lg:text-[2.75rem]">

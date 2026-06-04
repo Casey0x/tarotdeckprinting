@@ -1,5 +1,5 @@
 import { ProductPhotoFrame } from "@/components/ui/ProductPhotoFrame";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
+import { IMAGES } from "@/lib/images";
 
 const features = [
   "Full colour printing",
@@ -14,10 +14,10 @@ export function TuckBoxes() {
       <div className="site-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <ProductPhotoFrame
-            src={PRODUCT_IMAGES.cardsStack}
+            src={IMAGES.tuckBox}
             alt="Custom printed tarot tuck box with full colour CMYK artwork"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            objectPosition="center 45%"
+            objectPosition="center center"
             className="aspect-[5/6] w-full lg:aspect-[4/5]"
           />
 
