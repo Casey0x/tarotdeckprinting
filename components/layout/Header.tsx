@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { LogoMark, GoldStar } from "@/components/ui/BrandIcons";
+import { GoldStar } from "@/components/ui/BrandIcons";
+import { IMAGES } from "@/lib/images";
 
 const navLinks = [
   { href: "#top", label: "Home" },
@@ -32,14 +34,21 @@ export function Header() {
           : "bg-gradient-to-b from-black/50 to-transparent"
       }`}
     >
-      <div className="site-container flex h-[72px] items-center justify-between gap-4 lg:h-[80px]">
-        <Link href="#top" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <LogoMark className="h-8 w-8 md:h-9 md:w-9" />
-          <span className="font-cinzel text-[10px] font-semibold uppercase leading-tight tracking-[0.14em] text-gold md:text-[11px]">
-            TarotDeck
-            <br />
-            Printing.com
-          </span>
+      <div className="site-container flex h-[72px] items-center justify-between gap-3 lg:h-[80px] lg:gap-4">
+        <Link
+          href="#top"
+          className="flex shrink-0 items-center py-1 transition-opacity duration-300 hover:opacity-90"
+          onClick={() => setOpen(false)}
+        >
+          <Image
+            src={IMAGES.logo}
+            alt="Tarot Deck Printing"
+            width={1024}
+            height={682}
+            priority
+            className="h-11 w-auto md:h-12 lg:h-[58px]"
+            sizes="(max-width: 768px) 120px, (max-width: 1024px) 130px, 150px"
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 xl:gap-8 lg:flex" aria-label="Primary">
