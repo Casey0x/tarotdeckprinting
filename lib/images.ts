@@ -4,7 +4,7 @@
  */
 export const IMAGES = {
   hero: "/images/hero-tarot-deck-v2.jpg",
-  quality: "/images/quality-showcase.jpg",
+  quality: "/images/print-quality-showcase.jpg",
   tuckBox: "/images/tuck-box-showcase.jpg",
   ctaBanner: "/images/cta-banner-deck.jpg",
   gallery: [

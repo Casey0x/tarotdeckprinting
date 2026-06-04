@@ -44,7 +44,7 @@ export function WhyCreators() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <ProductPhotoFrame
             src={IMAGES.quality}
-            alt="Full colour CMYK printed tarot deck and custom printed tuck box"
+            alt="Premium custom tarot deck printing quality"
             sizes="(max-width: 1024px) 100vw, 50vw"
             objectPosition="center center"
             className="aspect-[4/5] w-full max-w-lg lg:max-w-none"
