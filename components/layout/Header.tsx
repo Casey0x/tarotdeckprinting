@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { GoldStar } from "@/components/ui/BrandIcons";
 import { HashLink } from "@/components/ui/HashLink";
-import { IMAGES } from "@/lib/images";
 
 /** Matches header bar height — keep in sync with Hero top padding */
 export const HEADER_HEIGHT_CLASS = "h-[76px] lg:h-[88px]";
@@ -51,15 +49,61 @@ export function Header() {
           className="col-start-1 row-start-1 flex shrink-0 items-center justify-self-start transition-opacity duration-300 hover:opacity-90 lg:pr-2"
           onClick={() => setOpen(false)}
         >
-          <Image
-            src={IMAGES.logo}
-            alt="Tarot Deck Printing"
-            width={1024}
-            height={682}
-            priority
+          {/* TDP Logo v2 — do not revert */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 300 56"
+            role="img"
+            aria-label="Tarot Deck Printing"
             className="h-12 w-auto lg:h-[60px]"
-            sizes="(max-width: 768px) 168px, (max-width: 1200px) 190px, 220px"
-          />
+          >
+            <g transform="translate(22, 28)">
+              <rect
+                x="-13"
+                y="-20"
+                width="26"
+                height="40"
+                rx="3"
+                fill="#0a1a0e"
+                stroke="#C9A84C"
+                strokeWidth="2.2"
+              />
+              <rect
+                x="-9"
+                y="-16"
+                width="18"
+                height="32"
+                rx="2"
+                fill="none"
+                stroke="#C9A84C"
+                strokeWidth="0.5"
+                opacity="0.4"
+              />
+              <g style={{ fontFamily: "Georgia, serif" }}>
+                <text x="0" y="-5" textAnchor="middle" fontSize="8" fill="#C9A84C">
+                  T
+                </text>
+                <line x1="-6" y1="-1" x2="6" y2="-1" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
+                <text x="0" y="7" textAnchor="middle" fontSize="8" fill="#C9A84C" opacity="0.85">
+                  D
+                </text>
+                <line x1="-6" y1="11" x2="6" y2="11" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
+                <text x="0" y="19" textAnchor="middle" fontSize="8" fill="#C9A84C" opacity="0.7">
+                  P
+                </text>
+              </g>
+            </g>
+            <g style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+              <text x="48" y="21" fontSize="14" fontWeight="400" fill="#F2F4F3" letterSpacing="4">
+                TAROT DECK
+              </text>
+              <text x="150" y="41" textAnchor="middle" fontSize="13" fontWeight="700" fill="#C9A84C" letterSpacing="7">
+                PRINTING
+              </text>
+            </g>
+            <line x1="48" y1="30" x2="78" y2="30" stroke="#C9A84C" strokeWidth="1" />
+            <line x1="222" y1="30" x2="252" y2="30" stroke="#C9A84C" strokeWidth="1" />
+          </svg>
         </HashLink>
 
         {/* Desktop nav — centred, secondary to logo */}
