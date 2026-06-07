@@ -6,20 +6,11 @@
   </head>
   <body>
     <!-- Static form for Netlify build-time detection (Next.js) -->
-    <form
-      name="quote-request"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      hidden
-    >
+    <form name="quote-request" netlify netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="quote-request" />
-      <p hidden>
-        <label>Don&apos;t fill this out: <input name="bot-field" /></label>
-      </p>
       <input type="text" name="name" />
       <input type="email" name="email" />
-      <select name="decks"></select>
+      <select name="number-of-decks"></select>
       <input type="number" name="cards-per-deck" />
       <textarea name="message"></textarea>
     </form>
