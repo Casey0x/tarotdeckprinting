@@ -9,9 +9,17 @@ type HashLinkProps = Omit<ComponentProps<"a">, "href"> & {
 export function HashLink({ href, onClick, ...props }: HashLinkProps) {
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
-    window.history.replaceState(null, "", href);
-    onClick?.(e);
+    const id = href.slice(1);
+    const target = document.getElementById(id);
+
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", window.location.pathname === "/" ? href : `/${href}`);
+      onClick?.(e);
+      return;
+    }
+
+    window.location.assign(`/${href}`);
   };
 
   return <a href={href} onClick={handleClick} {...props} />;

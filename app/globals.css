@@ -141,4 +141,8 @@
   .quote-form-success {
     @apply px-4 py-8 text-center;
   }
+
+  .legal-divider {
+    @apply h-px border-0 bg-gradient-to-r from-transparent via-[#C9A84C]/45 to-transparent;
+  }
 }
