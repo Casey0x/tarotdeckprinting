@@ -2,32 +2,35 @@
 
 import { type FormEvent, useState } from "react";
 
+/** Netlify Forms with Next.js must POST to the static HTML file, not "/". */
+const NETLIFY_FORM_ACTION = "/netlify-forms.html";
+
 export function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitting(true);
-    setError(false);
+    setIsSubmitting(true);
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    formData.append("form-name", "quote-request");
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
 
-    const response = await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
-    });
+      await fetch(NETLIFY_FORM_ACTION, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(Array.from(formData.entries()) as [string, string][]).toString(),
+      });
 
-    setSubmitting(false);
-
-    if (response.ok) {
       setSubmitted(true);
       (e.target as HTMLFormElement).reset();
-    } else {
+    } catch (err) {
       setError(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -43,7 +46,15 @@ export function QuoteForm() {
   }
 
   return (
-    <form name="quote-request" method="POST" onSubmit={handleSubmit} className="quote-form">
+    <form
+      name="quote-request"
+      method="POST"
+      action={NETLIFY_FORM_ACTION}
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+      className="quote-form"
+    >
       <input type="hidden" name="form-name" value="quote-request" />
       <p className="hidden" aria-hidden="true">
         <label>
@@ -133,8 +144,8 @@ export function QuoteForm() {
         </div>
       </div>
 
-      <button type="submit" className="quote-form-submit" disabled={submitting}>
-        {submitting ? "Sending…" : "Request a Quote"}
+      <button type="submit" className="quote-form-submit" disabled={isSubmitting}>
+        {isSubmitting ? "Sending…" : "Request a Quote"}
       </button>
 
       {error && (

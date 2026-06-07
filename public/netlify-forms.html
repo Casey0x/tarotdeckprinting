@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Netlify form detection</title>
-  </head>
+<html>
   <body>
-    <!-- Static form for Netlify build-time detection (Next.js) -->
     <form name="quote-request" netlify netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="quote-request" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <select name="number-of-decks"></select>
-      <input type="number" name="cards-per-deck" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <select name="number-of-decks">
+        <option>50-99</option>
+      </select>
+      <input name="cards-per-deck" type="number" />
       <textarea name="message"></textarea>
+      <button type="submit">Submit</button>
     </form>
   </body>
 </html>
