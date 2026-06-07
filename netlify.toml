@@ -1,5 +1,9 @@
 [build]
   command = "npm run build"
 
+# Form "quote-request" email notifications are configured in Netlify UI:
+# Site configuration → Notifications → Form submission notifications
+# → Add notification → Email → hello@tarotdeckprinting.com
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"

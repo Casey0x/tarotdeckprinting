@@ -78,4 +78,67 @@
   .product-photo-frame {
     @apply relative overflow-hidden rounded-sm border border-gold/20 shadow-[0_24px_70px_rgba(0,0,0,0.55)];
   }
+
+  .quote-form-wrapper {
+    @apply relative border border-gold/20 bg-[rgba(11,37,22,0.72)] p-6 md:p-8;
+  }
+
+  .quote-form-wrapper::before,
+  .quote-form-wrapper::after {
+    content: "✦";
+    @apply absolute text-xs text-gold/40;
+  }
+
+  .quote-form-wrapper::before {
+    @apply left-3 top-3;
+  }
+
+  .quote-form-wrapper::after {
+    @apply bottom-3 right-3;
+  }
+
+  .quote-form-grid {
+    @apply grid gap-5 sm:grid-cols-2;
+  }
+
+  .quote-field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .quote-field-full {
+    @apply sm:col-span-2;
+  }
+
+  .quote-field-label {
+    @apply font-cinzel text-[11px] font-semibold uppercase tracking-[0.08em] text-sage;
+  }
+
+  .quote-field-input {
+    @apply w-full border border-white/10 bg-[rgba(13,27,42,0.6)] px-4 py-3 font-lato text-sm text-text-light outline-none transition-colors placeholder:text-text-light/35 focus:border-[#C9A84C];
+  }
+
+  .quote-field-select {
+    @apply cursor-pointer appearance-none bg-[length:10px_10px] bg-[position:right_1rem_center] bg-no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%236A9E72' d='M5 7L0 2h10z'/%3E%3C/svg%3E");
+  }
+
+  .quote-field-select option {
+    @apply bg-midnight;
+  }
+
+  .quote-field-textarea {
+    @apply min-h-[120px] resize-y;
+  }
+
+  .quote-form-submit {
+    @apply mt-6 w-full rounded-sm border border-[#C9A84C]/60 bg-[#C9A84C] px-8 py-3.5 font-cinzel text-[11px] font-semibold uppercase tracking-nav text-forest-deep transition hover:bg-[#d4b85c] disabled:cursor-wait disabled:opacity-70 md:text-xs;
+  }
+
+  .quote-form-error {
+    @apply mt-4 border border-red-400/30 bg-red-950/20 px-4 py-3 text-center font-lato text-sm text-red-200/90;
+  }
+
+  .quote-form-success {
+    @apply px-4 py-8 text-center;
+  }
 }

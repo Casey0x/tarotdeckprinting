@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import { HashLink } from "@/components/ui/HashLink";
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-forest-deep py-8">
@@ -8,16 +7,15 @@ export function Footer() {
           © {new Date().getFullYear()} TarotDeckPrinting.com. Crafted with magic and precision.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-5">
-          <Link href="#quote" className="text-xs uppercase tracking-nav text-text-light/50 hover:text-gold">
+          <HashLink href="#quote" className="text-xs uppercase tracking-nav text-text-light/50 hover:text-gold">
             Get a Quote
-          </Link>
-          <Link href="#gallery" className="text-xs uppercase tracking-nav text-text-light/50 hover:text-gold">
+          </HashLink>
+          <HashLink href="#gallery" className="text-xs uppercase tracking-nav text-text-light/50 hover:text-gold">
             Gallery
-          </Link>
-          <Link href="#how-it-works" className="text-xs uppercase tracking-nav text-text-light/50 hover:text-gold">
+          </HashLink>
+          <HashLink href="#how-it-works" className="text-xs uppercase tracking-nav text-text-light/50 hover:text-gold">
             How It Works
-          </Link>
-        </div>
+          </HashLink>        </div>
       </div>
     </footer>
   );
