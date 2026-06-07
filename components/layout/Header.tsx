@@ -51,51 +51,60 @@ export function Header() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 280 56"
+            viewBox="0 0 320 64"
             role="img"
             aria-label="Tarot Deck Printing"
             className="h-12 w-auto lg:h-[60px]"
           >
-            <g transform="translate(30,28) rotate(-20)">
-              <rect
-                x="-11"
-                y="-18"
-                width="22"
-                height="36"
-                rx="3"
-                fill="#0a1a0e"
-                stroke="#C9A84C"
-                strokeWidth="1.8"
-              />
+            {/* Card 1 — back, fanned left */}
+            <g transform="translate(14, 46)">
+              <g transform="rotate(-22)">
+                <rect
+                  x="-11"
+                  y="-36"
+                  width="22"
+                  height="36"
+                  rx="3"
+                  fill="#0a1a0e"
+                  stroke="#C9A84C"
+                  strokeWidth="1.8"
+                />
+              </g>
             </g>
-            <g transform="translate(30,28) rotate(-9)">
-              <rect
-                x="-11"
-                y="-18"
-                width="22"
-                height="36"
-                rx="3"
-                fill="#0a1a0e"
-                stroke="#C9A84C"
-                strokeWidth="1.8"
-              />
+
+            {/* Card 2 — middle */}
+            <g transform="translate(26, 43)">
+              <g transform="rotate(-10)">
+                <rect
+                  x="-11"
+                  y="-36"
+                  width="22"
+                  height="36"
+                  rx="3"
+                  fill="#0a1a0e"
+                  stroke="#C9A84C"
+                  strokeWidth="1.8"
+                />
+              </g>
             </g>
-            <g transform="translate(30,26)">
+
+            {/* Card 3 — front, upright and larger */}
+            <g transform="translate(40, 40)">
               <rect
-                x="-13"
-                y="-20"
-                width="26"
-                height="40"
+                x="-14"
+                y="-44"
+                width="28"
+                height="44"
                 rx="3"
                 fill="#0a1a0e"
                 stroke="#C9A84C"
                 strokeWidth="2.2"
               />
               <rect
-                x="-9"
-                y="-16"
-                width="18"
-                height="32"
+                x="-10"
+                y="-40"
+                width="20"
+                height="36"
                 rx="2"
                 fill="none"
                 stroke="#C9A84C"
@@ -103,29 +112,30 @@ export function Header() {
                 opacity="0.4"
               />
               <g style={{ fontFamily: "Georgia, serif" }}>
-                <text x="0" y="-5" textAnchor="middle" fontSize="8" fill="#C9A84C">
+                <text x="0" y="-6" textAnchor="middle" fontSize="9" fill="#C9A84C">
                   T
                 </text>
-                <line x1="-6" y1="-1" x2="6" y2="-1" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
-                <text x="0" y="7" textAnchor="middle" fontSize="8" fill="#C9A84C" opacity="0.85">
+                <line x1="-7" y1="-1" x2="7" y2="-1" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
+                <text x="0" y="8" textAnchor="middle" fontSize="9" fill="#C9A84C" opacity="0.85">
                   D
                 </text>
-                <line x1="-6" y1="11" x2="6" y2="11" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
-                <text x="0" y="19" textAnchor="middle" fontSize="8" fill="#C9A84C" opacity="0.7">
+                <line x1="-7" y1="12" x2="7" y2="12" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
+                <text x="0" y="21" textAnchor="middle" fontSize="9" fill="#C9A84C" opacity="0.7">
                   P
                 </text>
               </g>
             </g>
+
             <g style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
-              <text x="56" y="21" fontSize="14" fontWeight="400" fill="#F2F4F3" letterSpacing="4">
+              <text x="68" y="24" fontSize="15" fontWeight="300" fill="#F2F4F3" letterSpacing="7">
                 TAROT DECK
               </text>
-              <text x="144" y="41" textAnchor="middle" fontSize="13" fontWeight="700" fill="#C9A84C" letterSpacing="7">
+              <text x="176" y="47" textAnchor="middle" fontSize="14" fontWeight="700" fill="#C9A84C" letterSpacing="7">
                 PRINTING
               </text>
             </g>
-            <line x1="56" y1="30" x2="78" y2="30" stroke="#C9A84C" strokeWidth="1" />
-            <line x1="210" y1="30" x2="232" y2="30" stroke="#C9A84C" strokeWidth="1" />
+            <line x1="88" y1="34" x2="128" y2="34" stroke="#C9A84C" strokeWidth="1" />
+            <line x1="224" y1="34" x2="264" y2="34" stroke="#C9A84C" strokeWidth="1" />
           </svg>
         </Link>
 
