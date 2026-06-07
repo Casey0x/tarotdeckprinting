@@ -7,6 +7,26 @@
     scroll-behavior: smooth;
   }
 
+  #top,
+  #tuck-boxes,
+  #gallery,
+  #how-it-works,
+  #quote,
+  #why-creators {
+    scroll-margin-top: 76px;
+  }
+
+  @media (min-width: 1024px) {
+    #top,
+    #tuck-boxes,
+    #gallery,
+    #how-it-works,
+    #quote,
+    #why-creators {
+      scroll-margin-top: 88px;
+    }
+  }
+
   body {
     @apply bg-midnight text-text-light font-lato antialiased;
   }

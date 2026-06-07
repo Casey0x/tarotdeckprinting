@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { HeroProductVisual } from "@/components/home/HeroProductVisual";
+import { HashLink } from "@/components/ui/HashLink";
 
 export function Hero() {
   return (
@@ -33,14 +33,14 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-9">
-              <Link href="#quote" className="btn-primary">
+              <HashLink href="#quote" className="btn-primary">
                 Get a Quote
                 <span aria-hidden="true">→</span>
-              </Link>
-              <Link href="#quote" className="btn-outline">
+              </HashLink>
+              <HashLink href="#quote" className="btn-outline">
                 <BoxIcon />
                 Order Sample Pack
-              </Link>
+              </HashLink>
             </div>
           </div>
 

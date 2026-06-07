@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GoldStar } from "@/components/ui/BrandIcons";
+import { HashLink } from "@/components/ui/HashLink";
 import { IMAGES } from "@/lib/images";
 
 /** Matches header bar height — keep in sync with Hero top padding */
@@ -16,7 +16,7 @@ const navLinks = [
   { href: "#how-it-works", label: "How It Works" },
   { href: "#quote", label: "FAQ" },
   { href: "#why-creators", label: "About" },
-];
+] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -46,7 +46,7 @@ export function Header() {
         className={`site-container grid ${HEADER_HEIGHT_CLASS} grid-cols-[1fr_auto] items-center gap-x-3 lg:grid-cols-[auto_1fr_auto] lg:gap-x-10 xl:gap-x-14`}
       >
         {/* Logo — primary anchor, left-aligned with minimal padding */}
-        <Link
+        <HashLink
           href="#top"
           className="col-start-1 row-start-1 flex shrink-0 items-center justify-self-start transition-opacity duration-300 hover:opacity-90 lg:pr-2"
           onClick={() => setOpen(false)}
@@ -60,7 +60,7 @@ export function Header() {
             className="h-12 w-auto lg:h-[60px]"
             sizes="(max-width: 768px) 168px, (max-width: 1200px) 190px, 220px"
           />
-        </Link>
+        </HashLink>
 
         {/* Desktop nav — centred, secondary to logo */}
         <nav
@@ -68,22 +68,22 @@ export function Header() {
           aria-label="Primary"
         >
           {navLinks.map((link) => (
-            <Link
+            <HashLink
               key={link.href}
               href={link.href}
               className="whitespace-nowrap font-lato text-[10px] font-medium uppercase tracking-[0.14em] text-text-light/75 transition-colors hover:text-gold xl:text-[11px]"
             >
               {link.label}
-            </Link>
+            </HashLink>
           ))}
         </nav>
 
         {/* CTA + mobile menu */}
         <div className="col-start-2 row-start-1 flex items-center justify-end gap-2 lg:col-start-3 lg:gap-3">
-          <Link href="#quote" className="btn-outline-nav hidden lg:inline-flex">
+          <HashLink href="#quote" className="btn-outline-nav hidden lg:inline-flex">
             <GoldStar className="h-2.5 w-2.5 text-gold" />
             Get a Quote
-          </Link>
+          </HashLink>
 
           <button
             type="button"
@@ -103,19 +103,19 @@ export function Header() {
         <div className="border-t border-white/10 bg-[rgba(10,18,14,0.98)] backdrop-blur-md lg:hidden">
           <nav className="site-container flex flex-col gap-0.5 py-3" aria-label="Mobile">
             {navLinks.map((link) => (
-              <Link
+              <HashLink
                 key={link.href}
                 href={link.href}
                 className="rounded px-1 py-2.5 font-lato text-sm uppercase tracking-nav text-text-light/85 hover:bg-white/5 hover:text-gold"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </Link>
+              </HashLink>
             ))}
-            <Link href="#quote" className="btn-outline-nav mt-2 w-full" onClick={() => setOpen(false)}>
+            <HashLink href="#quote" className="btn-outline-nav mt-2 w-full" onClick={() => setOpen(false)}>
               <GoldStar className="h-2.5 w-2.5 text-gold" />
               Get a Quote
-            </Link>
+            </HashLink>
           </nav>
         </div>
       )}
