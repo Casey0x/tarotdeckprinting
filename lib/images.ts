@@ -3,6 +3,7 @@
  * Files live in /public/images/ — full colour CMYK print on 300gsm stock with custom tuck boxes.
  */
 export const IMAGES = {
+  logo: "/images/tarot-deck-printing-logo.png",
   hero: "/images/hero-tarot-deck-v2.jpg",
   quality: "/images/print-quality-showcase.jpg",
   tuckBox: "/images/tuck-box-showcase.jpg",

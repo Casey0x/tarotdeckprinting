@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GoldStar } from "@/components/ui/BrandIcons";
+import { IMAGES } from "@/lib/images";
 
 /** Matches header bar height — keep in sync with Hero top padding */
 export const HEADER_HEIGHT_CLASS = "h-[76px] lg:h-[88px]";
@@ -49,51 +51,15 @@ export function Header() {
           className="col-start-1 row-start-1 flex shrink-0 items-center justify-self-start transition-opacity duration-300 hover:opacity-90 lg:pr-2"
           onClick={() => setOpen(false)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 300 56"
-            fill="none"
-            role="img"
-            aria-label="Tarot Deck Printing"
+          <Image
+            src={IMAGES.logo}
+            alt="Tarot Deck Printing"
+            width={1024}
+            height={682}
+            priority
             className="h-12 w-auto lg:h-[60px]"
-          >
-            <g stroke="#D4AF37">
-              <rect x="1" y="9" width="30" height="41" rx="2.5" strokeWidth="0.75" opacity="0.45" />
-              <rect x="4" y="4" width="30" height="41" rx="2.5" strokeWidth="1.1" />
-              <rect x="7.5" y="7.5" width="23" height="34" rx="1.5" strokeWidth="0.55" />
-            </g>
-            <g fill="#D4AF37" fontFamily="var(--font-cinzel), Cinzel, serif" fontSize="8.5" fontWeight="600" textAnchor="middle">
-              <text x="19" y="19.5">T</text>
-              <text x="19" y="29">D</text>
-              <text x="19" y="38.5">P</text>
-            </g>
-            <text
-              x="48"
-              y="21.5"
-              fill="#F2F4F3"
-              fontFamily="var(--font-cinzel), Cinzel, serif"
-              fontSize="12.5"
-              fontWeight="600"
-              letterSpacing="0.14em"
-            >
-              TAROT DECK
-            </text>
-            <line x1="48" y1="27.5" x2="292" y2="27.5" stroke="#D4AF37" strokeWidth="0.5" opacity="0.55" />
-            <line x1="48" y1="41.5" x2="108" y2="41.5" stroke="#D4AF37" strokeWidth="0.5" />
-            <text
-              x="150"
-              y="43.5"
-              fill="#D4AF37"
-              fontFamily="var(--font-cinzel), Cinzel, serif"
-              fontSize="9.5"
-              fontWeight="600"
-              letterSpacing="0.22em"
-              textAnchor="middle"
-            >
-              PRINTING
-            </text>
-            <line x1="192" y1="41.5" x2="292" y2="41.5" stroke="#D4AF37" strokeWidth="0.5" />
-          </svg>
+            sizes="(max-width: 768px) 168px, (max-width: 1200px) 190px, 220px"
+          />
         </Link>
 
         {/* Desktop nav — centred, secondary to logo */}
