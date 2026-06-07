@@ -51,81 +51,48 @@ export function Header() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 280 56"
+            viewBox="0 0 300 56"
+            fill="none"
             role="img"
             aria-label="Tarot Deck Printing"
             className="h-12 w-auto lg:h-[60px]"
           >
-            <g transform="translate(30,28) rotate(-20)">
-              <rect
-                x="-11"
-                y="-18"
-                width="22"
-                height="36"
-                rx="3"
-                fill="#0a1a0e"
-                stroke="#C9A84C"
-                strokeWidth="1.8"
-              />
+            <g stroke="#D4AF37">
+              <rect x="1" y="9" width="30" height="41" rx="2.5" strokeWidth="0.75" opacity="0.45" />
+              <rect x="4" y="4" width="30" height="41" rx="2.5" strokeWidth="1.1" />
+              <rect x="7.5" y="7.5" width="23" height="34" rx="1.5" strokeWidth="0.55" />
             </g>
-            <g transform="translate(30,28) rotate(-9)">
-              <rect
-                x="-11"
-                y="-18"
-                width="22"
-                height="36"
-                rx="3"
-                fill="#0a1a0e"
-                stroke="#C9A84C"
-                strokeWidth="1.8"
-              />
+            <g fill="#D4AF37" fontFamily="var(--font-cinzel), Cinzel, serif" fontSize="8.5" fontWeight="600" textAnchor="middle">
+              <text x="19" y="19.5">T</text>
+              <text x="19" y="29">D</text>
+              <text x="19" y="38.5">P</text>
             </g>
-            <g transform="translate(30,26)">
-              <rect
-                x="-13"
-                y="-20"
-                width="26"
-                height="40"
-                rx="3"
-                fill="#0a1a0e"
-                stroke="#C9A84C"
-                strokeWidth="2.2"
-              />
-              <rect
-                x="-9"
-                y="-16"
-                width="18"
-                height="32"
-                rx="2"
-                fill="none"
-                stroke="#C9A84C"
-                strokeWidth="0.5"
-                opacity="0.4"
-              />
-              <g style={{ fontFamily: "Georgia, serif" }}>
-                <text x="0" y="-5" textAnchor="middle" fontSize="8" fill="#C9A84C">
-                  T
-                </text>
-                <line x1="-6" y1="-1" x2="6" y2="-1" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
-                <text x="0" y="7" textAnchor="middle" fontSize="8" fill="#C9A84C" opacity="0.85">
-                  D
-                </text>
-                <line x1="-6" y1="11" x2="6" y2="11" stroke="#C9A84C" strokeWidth="0.4" opacity="0.5" />
-                <text x="0" y="19" textAnchor="middle" fontSize="8" fill="#C9A84C" opacity="0.7">
-                  P
-                </text>
-              </g>
-            </g>
-            <g style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
-              <text x="56" y="21" fontSize="14" fontWeight="400" fill="#F2F4F3" letterSpacing="4">
-                TAROT DECK
-              </text>
-              <text x="144" y="41" textAnchor="middle" fontSize="13" fontWeight="700" fill="#C9A84C" letterSpacing="7">
-                PRINTING
-              </text>
-            </g>
-            <line x1="56" y1="30" x2="78" y2="30" stroke="#C9A84C" strokeWidth="1" />
-            <line x1="210" y1="30" x2="232" y2="30" stroke="#C9A84C" strokeWidth="1" />
+            <text
+              x="48"
+              y="21.5"
+              fill="#F2F4F3"
+              fontFamily="var(--font-cinzel), Cinzel, serif"
+              fontSize="12.5"
+              fontWeight="600"
+              letterSpacing="0.14em"
+            >
+              TAROT DECK
+            </text>
+            <line x1="48" y1="27.5" x2="292" y2="27.5" stroke="#D4AF37" strokeWidth="0.5" opacity="0.55" />
+            <line x1="48" y1="41.5" x2="108" y2="41.5" stroke="#D4AF37" strokeWidth="0.5" />
+            <text
+              x="150"
+              y="43.5"
+              fill="#D4AF37"
+              fontFamily="var(--font-cinzel), Cinzel, serif"
+              fontSize="9.5"
+              fontWeight="600"
+              letterSpacing="0.22em"
+              textAnchor="middle"
+            >
+              PRINTING
+            </text>
+            <line x1="192" y1="41.5" x2="292" y2="41.5" stroke="#D4AF37" strokeWidth="0.5" />
           </svg>
         </Link>
 
