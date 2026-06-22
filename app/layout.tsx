@@ -27,13 +27,13 @@ const lato = Lato({
 export const metadata: Metadata = {
     title: "TarotDeckPrinting.com – Bring Your Tarot Deck To Life",
     description:
-          "Full colour CMYK tarot deck printing on 300gsm premium card stock with custom printed tuck boxes. Minimum 50 decks.",
+        "Full colour CMYK tarot deck printing on 300gsm premium card stock with custom printed tuck boxes. Minimum 50 decks.",
     openGraph: {
-          title: "TarotDeckPrinting.com – Bring Your Tarot Deck To Life",
-          description:
-                  "Full colour CMYK tarot deck printing on 300gsm premium card stock with custom printed tuck boxes. Minimum 50 decks.",
-          type: "website",
-          url: "https://tarotdeckprinting.com",
+        title: "TarotDeckPrinting.com – Bring Your Tarot Deck To Life",
+        description:
+            "Full colour CMYK tarot deck printing on 300gsm premium card stock with custom printed tuck boxes. Minimum 50 decks.",
+        type: "website",
+        url: "https://tarotdeckprinting.com",
     },
 };
 
@@ -43,30 +43,42 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-          <html lang="en" className={`${cinzel.variable} ${cinzelDeco.variable} ${lato.variable}`}>
-                  <body>
-                          <MicrosoftClarity />
-                          <Header />
-                    {children}
-                          <Footer />
-                          <Script
-                                      id="tawk-to"
-                                      strategy="afterInteractive"
-                                      dangerouslySetInnerHTML={{
-                                                    __html: `
-                                                                  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-                                                                                (function(){
-                                                                                                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                                                                                                                s1.async=true;
-                                                                                                                                s1.src='https://embed.tawk.to/6a0c03ff5683b91c39785f8c/1jovev7sv';
-                                                                                                                                                s1.charset='UTF-8';
-                                                                                                                                                                s1.setAttribute('crossorigin','*');
-                                                                                                                                                                                s0.parentNode.insertBefore(s1,s0);
-                                                                                                                                                                                              })()
-                                                                                                                                                                                                          `,
-                                      }}
-                                    />
-                  </body>
-          </html>
-        );
+        <html lang="en" className={`${cinzel.variable} ${cinzelDeco.variable} ${lato.variable}`}>
+            <body>
+                <MicrosoftClarity />
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-03TQ9B41GH"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-03TQ9B41GH');
+                    `}
+                </Script>
+                <Header />
+                {children}
+                <Footer />
+                <Script
+                    id="tawk-to"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a0c03ff5683b91c39785f8c/1jovev7sv';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})()
+`,
+                    }}
+                />
+            </body>
+        </html>
+    );
 }
