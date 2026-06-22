@@ -1,9 +1,10 @@
 import Script from "next/script";
 
-export function MicrosoftClarity() {
-  const projectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+const CLARITY_PROJECT_ID =
+  process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "xaui7jwk2w";
 
-  if (!projectId) {
+export function MicrosoftClarity() {
+  if (!CLARITY_PROJECT_ID) {
     return null;
   }
 
@@ -17,7 +18,7 @@ export function MicrosoftClarity() {
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${projectId}");
+          })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
         `,
       }}
     />
