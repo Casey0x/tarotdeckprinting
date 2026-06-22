@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cinzel, Cinzel_Decorative, Lato } from "next/font/google";
 import "./globals.css";
+import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cinzel.variable} ${cinzelDeco.variable} ${lato.variable}`}>
       <body>
+        <MicrosoftClarity />
         <Header />
         {children}
         <Footer />

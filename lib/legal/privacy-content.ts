@@ -18,7 +18,7 @@ export const privacyContent: LegalPageContent = {
       paragraphs: [
         "When you submit a quote request or place an order, we may collect:",
         "• Your name and email address\n• Your phone number (if provided)\n• Your shipping address\n• Artwork files you submit for printing\n• Order and payment details",
-        "We also collect standard website usage data (pages visited, browser type, IP address) through analytics tools.",
+        "We also collect standard website usage data (pages visited, browser type, IP address, clicks, and scroll behaviour) through Microsoft Clarity, a privacy-focused analytics service operated by Microsoft.",
       ],
     },
     {
@@ -54,9 +54,10 @@ export const privacyContent: LegalPageContent = {
       ],
     },
     {
-      title: "Cookies",
+      title: "Cookies & Analytics",
       paragraphs: [
-        "Our website may use cookies to improve your browsing experience. You can disable cookies in your browser settings, though this may affect some website functionality.",
+        "We use Microsoft Clarity to understand how visitors use our website through session recordings and heatmaps. Clarity may set first-party cookies to distinguish unique visitors and sessions.",
+        "You can disable cookies in your browser settings, though this may affect some website functionality. For more information, see Microsoft's Clarity privacy documentation at clarity.microsoft.com.",
       ],
     },
     {
