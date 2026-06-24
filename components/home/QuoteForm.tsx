@@ -1,23 +1,25 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { type FormEvent, useState } from "react";
 
 /** Netlify Forms with Next.js must POST to the static HTML file, not "/". */
 const NETLIFY_FORM_ACTION = "/netlify-forms.html";
 
 export function QuoteForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const [error, setError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(false);
 
     try {
       const formData = new FormData(e.target as HTMLFormElement);
 
-      await fetch(NETLIFY_FORM_ACTION, {
+      const response = await fetch(NETLIFY_FORM_ACTION, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -25,25 +27,17 @@ export function QuoteForm() {
         body: new URLSearchParams(Array.from(formData.entries()) as [string, string][]).toString(),
       });
 
-      setSubmitted(true);
-      (e.target as HTMLFormElement).reset();
-    } catch (err) {
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      router.push("/thank-you");
+    } catch {
       setError(true);
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <div className="quote-form-success">
-        <p className="font-cinzel text-lg text-gold">Thank You</p>
-        <p className="mt-2 font-lato text-sm text-text-light/70">
-          We&apos;ll send a personalised quote to your inbox within one business day.
-        </p>
-      </div>
-    );
-  }
 
   return (
     <form
@@ -90,6 +84,21 @@ export function QuoteForm() {
             placeholder="Where to send your quote"
             required
             autoComplete="email"
+          />
+        </div>
+
+        <div className="quote-field">
+          <label className="quote-field-label" htmlFor="quote-location">
+            Location
+          </label>
+          <input
+            className="quote-field-input"
+            type="text"
+            id="quote-location"
+            name="location"
+            placeholder="City, State/Province, Country"
+            required
+            autoComplete="address-level2"
           />
         </div>
 
